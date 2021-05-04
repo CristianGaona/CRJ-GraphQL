@@ -1,6 +1,6 @@
 import got from "got";
 
-const USER_SERVICE_URI = "http://192.168.1.102:8080/api/v1";
+const USER_SERVICE_URI = "http://localhost:8080/api/v1";
 
 export default class UserService{
     
@@ -9,7 +9,24 @@ export default class UserService{
 
         return body.users;
     }
+
+
+    static async getUserById(uid_user){
+        const body = await got.get(`${USER_SERVICE_URI}/users/${uid_user}`).json();
+
+        return body.user;
+    }
+
+
+    static async deleteUserById(uid_user){
+        const body = await got.delete(`${USER_SERVICE_URI}/users/${uid_user}`).json();
+
+        return body;
+    }
 }
+
+
+
 
 
 

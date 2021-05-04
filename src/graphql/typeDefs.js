@@ -21,13 +21,16 @@ const typeDefs = gql `
         password: String!
     }
 
+
     #Queries and mutations
 
     type Query {
         user: [User!]!
+        getUserById(uid:String): User!
     }
     type Mutation {
         authUser(input: AuthUserInput ): Token
+        deleteUser(uid: String) : String
     }
 
 `

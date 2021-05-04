@@ -1,7 +1,7 @@
 import { AuthenticationError } from "apollo-server-errors";
 import got from "got";
 
-const AUTH_SERVICE_URI = "http://localhost:8080/api/v1/auth";
+const AUTH_SERVICE_URI = "https://app-users-microservice.herokuapp.com/api/v1/auth";
 
 export default class AuthUser{
     static async authUser ({email, password}){
